@@ -4,7 +4,7 @@ import React from "react";
 const Sign_Up = () => {
 
     return (
-        <div className="container" style="margin-top: 5%;">
+        <div className="container" style={{marginTop: "5%"}}>
         <div className="signup">
                 <h1>Sign Up</h1>
             <div className="signup-text">
@@ -14,13 +14,14 @@ const Sign_Up = () => {
                 <form>
                   <div className="form-group">
                      <label for="role">Role</label>                 
-                     <select className="role-list" id="roles" onChange={(event) => setName(event.target.value)}>
+                     {/*<select className="role-list" id="roles"}>   onChange={(event) => setName(event.target.value) */}
                        <option defaultValue>Select role</option>
                        <option value="Patient" name="patient">Patient</option>
                        <option value="Doctor" name="sales">Doctor</option>
-                     </select>
+                     {/* </select> */}
+                     
                   </div>
-                   
+                  
                     <div className="form-group">
                         <label for="name">Name</label>
                         <input type="text" name="name" id="name" required className="form-control" placeholder="Enter your name" aria-describedby="helpId" />
