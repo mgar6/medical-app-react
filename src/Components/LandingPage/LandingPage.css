@@ -18,9 +18,10 @@
 }
 .hero-section {
     height: 100vh;
-    padding-top: 15rem;
+    padding-top: 5rem;
     background: linear-gradient(180deg, #E4E4E4 0%, rgba(213, 252, 255, 0.54) 100%);
     z-index: -1;
+    margin: auto;
 }
 .hero-section .flex-hero {
     flex-direction: column;
@@ -31,6 +32,7 @@
 .hero-section .flex-hero h1 {
     font-size: 96px;
     font-weight: 700;
+    padding-top: 10rem;
 }
 .text-gradient {
     background: linear-gradient(270deg, #8723D4 22.8%, rgba(13, 194, 252, 0.91) 101.94%);
@@ -44,10 +46,6 @@
     text-align: center;
     padding: 12px 14rem;
     color:#969BA5;
-}
-
-.hero-section div:nth-child(2) {
-    margin-top: 4rem;
 }
 
 .hero-section .image {
