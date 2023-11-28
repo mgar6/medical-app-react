@@ -56,7 +56,7 @@ const Sign_Up = () => {
                     <div className="signup-form">
                         <form method="POST" onSubmit={register}>
                             <div className="form-group">
-                                <label for="role">Role</label>                 
+                                <label htmlFor="role">Role</label>                 
                                 <select className="role-list" id="roles"> {/* tuve que quitar esto respecto al html onChange={(event) => setName(event.target.value) */}
                                     <option defaultValue>Select role</option>
                                     <option value="Patient" name="patient">Patient</option>
@@ -64,21 +64,21 @@ const Sign_Up = () => {
                                 </select> 
                             </div>
                             <div className="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" name="name" id="name" required className="form-control" placeholder="Enter your name" aria-describedby="helpId" />
+                                <label htmlFor="name">Name</label>
+                                <input value={name} onChange={(e) => setName(e.target.value)} type="text" name="name" id="name" required className="form-control" placeholder="Enter your name" aria-describedby="helpId" />
                             </div>
                             <div className="form-group">
-                                <label for="phone">Phone</label>
-                                <input type="tel" name="phone" id="phone" required className="form-control" placeholder="Enter your phone number" aria-describedby="helpId" />
+                                <label htmlFor="phone">Phone</label>
+                                <input value={phone} onChange={(e) => setPhone(e.target.value)} type="tel" name="phone" id="phone" required className="form-control" placeholder="Enter your phone number" aria-describedby="helpId" />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="email">Email</label>
                                 <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" name="email" id="email" required className="form-control" placeholder="Enter your email" aria-describedby="helpId" />
-                                {showerr && <div className="err" style={{ color: 'red' }}>{showerr}</div>}
+                                {showerr && <div className="err" style={{ color: 'red' }}>{showerr}</div>} {/* is part of database connectivity to check if email id already exist in database. You need not to include it with other elements */}
                             </div>
                             <div className="form-group">
                                 <label for="password">Password</label>
-                                <input type="password" name="password" id="password" required className="form-control" placeholder="Enter your password" aria-describedby="helpId" />
+                                <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" name="password" id="password" required className="form-control" placeholder="Enter your password" aria-describedby="helpId" />
                                 <i className="fa fa-eye password-icon" aria-hidden="true"></i>
                             </div>
                             <div className="btn-group">

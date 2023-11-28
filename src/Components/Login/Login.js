@@ -12,7 +12,7 @@ const Login = () => {
         navigate("/")
       }
     }, []);
-    const login = async (e) => {
+    const login = async (e) => {  // a function named login has been created that handles the form submission and API call from the server side. This will establish the database connection.
       e.preventDefault();
       const res = await fetch(`${API_URL}/api/auth/login`, {
         method: "POST",
@@ -30,7 +30,7 @@ const Login = () => {
         sessionStorage.setItem('auth-token', json.authtoken);
     
         sessionStorage.setItem('email', email);
-        navigate('/');
+        navigate('/'); // the navigate variable has been used to navigate to the Home page after the sign up is successful. 
         window.location.reload()
       } else {
         if (json.errors) {
@@ -58,8 +58,8 @@ const Login = () => {
                                 <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" name="email" id="email" className="form-control" placeholder="Enter your email" aria-describedby="helpId" />             
                             </div>
                             <div className="form-group">
-                                <label for="password">Password</label>     
-                                <input type="password" name="password" id="password" required className="form-control" placeholder="Enter your password" aria-describedby="helpId" />
+                            <label htmlFor="password">Password</label>
+               <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" name="password" id="password" className="form-control" placeholder="Enter your password" aria-describedby="helpId" />
                                 <i className="fa fa-eye password-icon" aria-hidden="true"></i>
                             </div>
                             <div className="btn-group">
