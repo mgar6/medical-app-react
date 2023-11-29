@@ -38,7 +38,7 @@ const AppointmentFormIC = ({ doctorName, doctorSpeciality, onSubmit }) => {
             required
           />
         </div>
-        <button type="submit">Book Now</button>
+        <button className='book-appointment-btn' type="submit">Book Now</button>
       </form>
     );
   };

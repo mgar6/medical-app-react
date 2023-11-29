@@ -61,8 +61,8 @@
     
   }
   
-  .book-appoinment-btn {
-    background-color: #3498db;
+  .book-appointment-btn {
+    background-color: #3685fb;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -71,10 +71,11 @@
     cursor: pointer;
   }
   
-  .book-appoinment-btn div:nth-child(2) {
+  .book-appointment-btn div:nth-child(2) {
     font-size: 12px;
     font-weight: bold;
   }
+
   .modal-container {
   position: fixed;
   top: 0;
@@ -107,7 +108,7 @@
 .modal-btn {
   display: inline-block;
   padding: 8px 16px;
-  background-color: #2196f3;
+  background-color: #3685fb;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -167,20 +168,6 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
-}
-
-button {
-  padding: 12px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-button:hover {
-  background-color: #0056b3;
 }
 
 

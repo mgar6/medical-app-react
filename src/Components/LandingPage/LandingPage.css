@@ -19,7 +19,6 @@
 .hero-section {
     height: 100vh;
     padding-top: 5rem;
-    background: linear-gradient(180deg, #E4E4E4 0%, rgba(213, 252, 255, 0.54) 100%);
     z-index: -1;
     margin: auto;
 }

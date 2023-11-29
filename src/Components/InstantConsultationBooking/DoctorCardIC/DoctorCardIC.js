@@ -89,7 +89,7 @@ const DoctorCardIC = ({ name, speciality, experience, ratings, profilePic }) => 
                     <div className="bookedInfo" key={appointment.id}>
                       <p>Name: {appointment.name}</p>
                       <p>Phone Number: {appointment.phoneNumber}</p>
-                      <button onClick={() => handleCancel(appointment.id)}>Cancel Appointment</button>
+                      <button onClick={() => handleCancel(appointment.id)} className='book-appointment-btn' >Cancel Appointment</button>
                     </div>
                   ))}
                 </>

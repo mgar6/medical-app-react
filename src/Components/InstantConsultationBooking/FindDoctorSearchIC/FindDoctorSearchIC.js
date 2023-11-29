@@ -21,8 +21,10 @@ const FindDoctorSearchIC = () => {
     return (
         <div className='finddoctor'>
             <center>
-                <h1>Find a doctor and Consult instantly</h1>
-                <div>               <i style={{color:'#000000',fontSize:'20rem'}} className="fa fa-user-md"></i>
+                <h1>Find a doctor at your own ease</h1> {/*texto original: Find a doctor and Consult instantly */}
+                <div> 
+                    <img src= './images/online-doctor.png' />             
+                    {/* <i style={{color:'#000000',fontSize:'20rem'}} className="fa fa-user-md"></i> */}
 </div>                <div className="home-search-container"  style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
                     <div className="doctor-search-box">
                     {/* <p>Perform a search to see the results.</p> */}
