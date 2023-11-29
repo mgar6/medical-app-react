@@ -20,31 +20,15 @@ const AppointmentFormIC = ({ doctorName, doctorSpeciality, onSubmit }) => {
       <form onSubmit={handleFormSubmit} className="appointment-form">
         <div className="form-group">
           <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
+          <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} required />
         </div>
         <div className="form-group">
           <label htmlFor="phoneNumber">Phone Number:</label>
-          <input
-            type="tel"
-            id="phoneNumber"
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
-            required
-          />
+          <input type="tel" id="phoneNumber" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} required />
         </div>
         <div className="form-group">
           <label htmlFor="appointmentDate">Date of Appointment:</label>
-          <input
-            type="date"
-            id="appointmentDate"
-            required
-          />
+          <input type="date" id="appointmentDate" required />
         </div>
         <div className="form-group">
           <label htmlFor="timeSlot">Book time slot:</label>
