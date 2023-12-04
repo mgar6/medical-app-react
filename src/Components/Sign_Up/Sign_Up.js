@@ -10,7 +10,7 @@ const Sign_Up = () => {
     const [password, setPassword] = useState('');
     const [showerr, setShowerr] = useState('');
     const navigate = useNavigate();
-    const register = async (e) => {
+    const register = async (e) => { // a function named register has been created that handles the form submission and API call from the server side. This will establish the database connection.
         e.preventDefault();
         // API Call
         const response = await fetch(`${API_URL}/api/auth/register`, {
