@@ -18,7 +18,7 @@ const Navbar = () => {
         // remove email phone
         localStorage.removeItem("doctorData");
         setIsLoggedIn(false);
-        // setUsername("");
+        //setUsername("");
        
         // Remove the reviewFormData from local storage
         for (let i = 0; i < localStorage.length; i++) {
@@ -66,7 +66,7 @@ const Navbar = () => {
             {isLoggedIn?(
                 <>
                     <li className="link">
-                        <button className="btn2" onClick={handleDropdown}>"Welcome " + {username}</button>
+                        <Link onClick={handleDropdown}>Welcome, {username}</Link>
                     </li>
                     <li className="link">
                         <button className="btn2" onClick={handleLogout}>Logout</button>
