@@ -2,8 +2,7 @@ import './Services.css';
 import { Link } from 'react-router-dom';
 
 const Services = () => {
-
-
+    
     return (
         <div className= "services">
             <div className="services-header">
@@ -27,7 +26,7 @@ const Services = () => {
                             <img src=""></img>
                         </div>
                         <div className="service-title">
-                            <h3>Book an appointment</h3>
+                            <h3>Book an Appointment</h3>
                         </div>
                     </div>
                 </Link>
@@ -37,7 +36,7 @@ const Services = () => {
                             <img src=""></img>
                         </div>
                         <div className="service-title">
-                            <h3>Self checkup</h3>
+                            <h3>Self Checkup</h3>
                         </div>
                     </div>
                 </Link>
@@ -47,7 +46,7 @@ const Services = () => {
                             <img src=""></img>
                         </div>
                         <div className="service-title">
-                            <h3>Health tips and guidance</h3>
+                            <h3>Health Tips and Guidance</h3>
                         </div>
                     </div>
                 </Link>

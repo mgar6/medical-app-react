@@ -1,0 +1,36 @@
+.services {
+    font-family: 'Atkinson Hyperlegible';
+}
+
+.services-header {
+    text-align: center;
+    margin-top: 10%;
+}
+
+.services-header h2 {
+    font-size: 52px;
+}
+
+.services-header p {
+    font-size: 20px;
+}
+
+.service-container {
+    columns: 30px 4;
+    padding: 10%;
+    column-gap: 5%;
+}
+
+.service-button {
+    display: block;
+    border: 1px solid gray;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px gray;
+    background-color: white;
+}
+
+.service-title {
+    text-align: center;
+    font-size: 30;
+    padding: 5%;
+}
