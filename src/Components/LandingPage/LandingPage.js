@@ -28,6 +28,7 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
+
     );
 };
 export default LandingPage;

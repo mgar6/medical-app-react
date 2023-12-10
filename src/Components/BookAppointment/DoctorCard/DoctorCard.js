@@ -92,7 +92,7 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
                       <button onClick={() => handleCancel(appointment.id)} className='book-appointment-btn' >Cancel Appointment</button>
                     </div>
                   ))}
-                </>
+                </> 
               ) : (
                 <AppointmentForm doctorName={name} doctorSpeciality={speciality} onSubmit={handleFormSubmit} />
               )}

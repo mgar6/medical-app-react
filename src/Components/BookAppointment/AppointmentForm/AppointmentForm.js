@@ -11,7 +11,7 @@ const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
   
     const handleFormSubmit = (e) => {
       e.preventDefault();
-      onSubmit({ name, phoneNumber });
+      onSubmit({ name, phoneNumber, doctorName, doctorSpeciality }); // ver cómo y cuantas variables se deben pasar
       setName('');
       setPhoneNumber('');
     };
@@ -32,10 +32,14 @@ const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
         </div>
         <div className="form-group">
           <label htmlFor="timeSlot">Book time slot:</label>
-          <select className="time-slot" value={selectedSlot} onChange={(e) => setSelectedSlot(e.target.value)}>
+          <select className="time-slot" value={selectedSlot} onChange={(e) => handleSlotSelection(e.target.value)}>
                 <option defaultValue>Select a time slot</option>
-                <option value="morning" name="morning">Morning</option>
-                <option value="afternoon" name="afternoon">Afternoon</option>
+                <option value="8:00" name="8">8:00</option>
+                <option value="9:00" name="9">9:00</option>
+                <option value="10:00" name="10">10:00</option>
+                <option value="11:00" name="11">11:00</option>
+                <option value="13:00" name="13">13:00</option>
+                <option value="14:00" name="14">14:00</option>
         </select>
         </div>
         <button className='book-appointment-btn' type="submit">Book Now</button>

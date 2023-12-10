@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../Navbar/Navbar';
+var contador = 0;
 
 const Notification = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -24,7 +25,14 @@ const Notification = ({ children }) => {
     if (storedAppointmentData) {
       setAppointmentData(storedAppointmentData);
     }
+    contador+=1;
+    console.log("Contador: "+ contador);
+    console.log("Stored Doctor Data: " + storedAppointmentData);
   }, []);
+
+  console.log("Logged in: " + isLoggedIn);
+  console.log("Appointment data: " + appointmentData);
+
   return (
     <div>
       <Navbar ></Navbar>

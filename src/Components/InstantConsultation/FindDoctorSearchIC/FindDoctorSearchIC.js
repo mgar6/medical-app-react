@@ -18,7 +18,7 @@ const FindDoctorSearchIC = () => {
         navigate(`/instant-consultation?speciality=${speciality}`);
         window.location.reload();
     }
-    return (
+    return ( 
         <div className='finddoctor'>
             <center>
                 <h1>Find a doctor and consult instantly</h1> {/*texto original: Find a doctor and Consult instantly */}
@@ -31,11 +31,11 @@ const FindDoctorSearchIC = () => {
 
                         <input type="text" className="search-doctor-input-box" placeholder="Search doctors, clinics, hospitals, etc." onFocus={() => setDoctorResultHidden(false)} onBlur={() => setDoctorResultHidden(true)} value={searchDoctor} onChange={(e) => setSearchDoctor(e.target.value)} />
                         
-                        <div className="findiconimg"><img className='findIcon' src={process.env.PUBLIC_URL + '/images/search.svg'} alt="" style={{height:"20px", width:"20px", marginTop:"8px"}} /></div>
+                        <div className="findiconimg"><img className='findIcon' src='/images/search.svg' alt="" style={{height:"20px", width:"20px", marginTop:"8px"}} /></div> {/* le quité esto del src {process.env.PUBLIC_URL + } */}
                         <div className="search-doctor-input-results" hidden={doctorResultHidden}>
                             {
                                 specialities.map(speciality => <div className="search-doctor-result-item" key={speciality} onMouseDown={() => handleDoctorSelect(speciality)}>
-                                    <span><img src={process.env.PUBLIC_URL + '/images/search.svg'} alt="" style={{height:"10px", width:"10px"}} width="12" /></span>
+                                    <span><img src='/images/search.svg' alt="" style={{height:"10px", width:"10px"}} width="12" /></span> {/* le quité esto del src {process.env.PUBLIC_URL + } */}
                                     <span>{speciality}</span>
                                     <span>SPECIALITY</span>
                                 </div>)
