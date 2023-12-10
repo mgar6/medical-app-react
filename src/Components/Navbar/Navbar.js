@@ -37,7 +37,7 @@ const Navbar = () => {
       const storedemail = sessionStorage.getItem("email");
       if (storedemail) {
             setIsLoggedIn(true);
-            setUsername(storedemail);
+            setUsername(storedemail.split("@")[0]); //corta el email en dos partes separadas por el @
         }
     }, []);
 
