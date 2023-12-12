@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
         <BrowserRouter>
-            <Notification />
+            <Notification>
               <Routes>
                 <Route path='/' element={<LandingPage/>}/>
                 <Route path="/instant-consultation" element={<InstantConsultation />} />
@@ -24,6 +24,7 @@ function App() {
                 <Route path='/signup' element={<Sign_Up/>}/>
                 <Route path='/services' element={<Services/>}/>
               </Routes>
+              </Notification>
         </BrowserRouter>
        
     </div>
