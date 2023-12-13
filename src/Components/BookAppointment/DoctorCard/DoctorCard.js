@@ -29,6 +29,7 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
         speciality: speciality,
     };
     localStorage.setItem('doctorData', JSON.stringify(doctorData));
+    localStorage.setItem('appointmentData', JSON.stringify(appointmentData)); // envia el nombre, telefono, fecha y hora de la cita
     const updatedAppointments = [...appointments, newAppointment];
     setAppointments(updatedAppointments);
     setShowModal(false);

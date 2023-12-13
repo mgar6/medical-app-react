@@ -11,7 +11,8 @@ const Notification = ({ children }) => {
   useEffect(() => {
     const storedUsername = sessionStorage.getItem('email');
     const storedDoctorData = JSON.parse(localStorage.getItem('doctorData'));
-    const storedAppointmentData = JSON.parse(localStorage.getItem(storedDoctorData?.name));
+   // const storedAppointmentData = JSON.parse(localStorage.getItem(storedDoctorData?.name));
+    const storedAppointmentData = JSON.parse('appointmentData');
 
     if (storedUsername) {
       setIsLoggedIn(true);
