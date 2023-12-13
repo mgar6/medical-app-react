@@ -1,3 +1,4 @@
+import './Notification.css';
 import React, { useEffect, useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 
@@ -29,19 +30,22 @@ const Notification = ({ children }) => {
 
   console.log("Logged in: " + isLoggedIn);
   console.log("Appointment data: " + appointmentData);
- 
+
 
   return (
     <div>
       <Navbar ></Navbar>
       {children}
-      {isLoggedIn && appointmentData && ( 
+      {  ( //isLoggedIn && appointmentData &&
         <>
           <div className="appointment-card">
             <div className="appointment-card__content">
               <h3 className="appointment-card__title">Appointment Details</h3>
               <p className="appointment-card__message">
                 <strong>Doctor:</strong> {doctorData?.name}
+              </p>
+              <p className="appointment-card__message">
+                <strong>Speciality:</strong> {doctorData?.speciality}
               </p>
             </div>
           </div>
@@ -50,5 +54,4 @@ const Notification = ({ children }) => {
     </div>
   );
 };
-
 export default Notification;
