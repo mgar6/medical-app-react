@@ -5,22 +5,15 @@ import Navbar from '../Navbar/Navbar';
 const Notification = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState("");
-  const [doctorData, setDoctorData] = useState(null);
   const [appointmentData, setAppointmentData] = useState(null);
 
   useEffect(() => {
     const storedUsername = sessionStorage.getItem('email');
-    const storedDoctorData = JSON.parse(localStorage.getItem('doctorData'));
-   // const storedAppointmentData = JSON.parse(localStorage.getItem(storedDoctorData?.name));
-    const storedAppointmentData = JSON.parse('appointmentData');
+    const storedAppointmentData = JSON.parse(localStorage.getItem('appointmentData'));
 
     if (storedUsername) {
       setIsLoggedIn(true);
       setUsername(storedUsername);
-    }
-
-    if (storedDoctorData) {
-      setDoctorData(storedDoctorData);
     }
 
     if (storedAppointmentData) {
@@ -29,29 +22,55 @@ const Notification = ({ children }) => {
 
   }, []);
 
-  console.log("Logged in: " + isLoggedIn);
-  console.log("Appointment data: " + appointmentData);
-
-
   return (
     <div>
-      <Navbar ></Navbar>
-      {children}
-      {  ( //isLoggedIn && appointmentData &&
-        <>
-          <div className="appointment-card">
-            <div className="appointment-card__content">
-              <h3 className="appointment-card__title">Appointment Details</h3>
-              <p className="appointment-card__message">
-                <strong>Doctor:</strong> {doctorData?.name}
-              </p>
-              <p className="appointment-card__message">
-                <strong>Speciality:</strong> {doctorData?.speciality}
-              </p>
-            </div>
-          </div>
-        </>
-      )}
+        <Navbar ></Navbar>
+        {children}
+        {  isLoggedIn && appointmentData && ( 
+            <>
+                <div className="appointment-card">
+                    <div className="appointment-card__content">
+                        <h3 className="appointment-card__title">Appointment Details</h3>
+                        <p className="appointment-card__message">
+                            <span>Doctor:</span> {appointmentData?.doctorName}
+                        </p>
+                        <p className="appointment-card__message">
+                            <span>Speciality:</span>  {appointmentData?.doctorSpeciality}
+                        </p>
+                        <p className="appointment-card__message">
+                            <span>Name:</span>  {appointmentData?.patientName}
+                        </p>
+                        <p className="appointment-card__message">
+                            <span>Phone Number:</span>  {appointmentData?.patientPhoneNumber}
+                        </p>
+                        <p className="appointment-card__message">
+                            <span>Date:</span>  {appointmentData?.appointmentDate}
+                        </p>
+                        <p className="appointment-card__message">
+                            <span>Time:</span>  {appointmentData?.appointmentTime}
+                        </p>
+    {/* 
+              {appointmentData.map((appointment) => (
+                <>
+                    <p className="appointment-card__message" key={appointment.id}>
+                        <strong>Name:</strong> {appointment.name}
+                    </p>
+                    <p className="appointment-card__message">
+                        <strong>Phone Number:</strong> {appointment.phoneNumber}
+                    </p>
+                    <p className="appointment-card__message">
+                        <strong>Date:</strong> {appointment.appointmentDate}
+                    </p>
+                    <p className="appointment-card__message">
+                        <strong>Time:</strong> {appointment.appointmentTime}
+                    </p>
+                </>
+                  ))}
+    */}
+                    </div>
+                </div>
+            </>  
+        )}
     </div>
   );
 };

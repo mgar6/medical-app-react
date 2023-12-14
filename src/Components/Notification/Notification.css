@@ -17,8 +17,14 @@
 .appointment-card__title {
     text-align: center;
     font-size: 20px;
+    padding: 5%;
 }
 
 .appointment-card__message {
-    font-size: 18px;
+    font-size: 16px;
+    padding: 1%;
+}
+
+.appointment-card__message span {
+    text-decoration-line: underline;
 }
