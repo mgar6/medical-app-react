@@ -9,10 +9,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
   }
-  .cancel-appointment {
-    background-color: red;
-  }
-  
+
   .doctor-card-details-container {
     padding: 20px;
   }
@@ -127,7 +124,7 @@
   background-color: #0d8af5;
 }
 
-.cancel-appointment-btn {
+.cancel-appointment-btn-instant-consultation {
   display: inline-block;
   padding: 8px 16px;
   background-color: #f44336;
@@ -138,7 +135,7 @@
   transition: background-color 0.3s ease;
 }
 
-.cancel-appointment-btn:hover {
+.cancel-appointment-btn-instant-consultation:hover {
   background-color: #d63027;
 }
 .appointment-form {
@@ -175,4 +172,9 @@ textarea {
   background-color: green;
   cursor: pointer;
   /* color: rgb(249, 60, 60); */
+}
+
+.bookedInfo {
+    text-align: center;
+    padding: 2%;
 }
