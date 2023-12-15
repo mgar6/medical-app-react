@@ -41,6 +41,7 @@ const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
                 <option value="9:00 AM" name="9">9:00 AM</option>
                 <option value="10:00 AM" name="10">10:00 AM</option>
                 <option value="11:00 AM" name="11">11:00 AM</option>
+                <option value="12:00 PM" name="12">12:00PM</option>
                 <option value="1:00 PM" name="13">1:00 PM</option>
                 <option value="2:00 PM" name="14">2:00 PM</option>
         </select>

@@ -58,7 +58,7 @@
     
   }
   
-  .book-appointment-btn {
+  .book-appointment-btn-instant-consultation {
     background-color: #3685fb;
     color: #fff;
     border: none;
@@ -68,7 +68,7 @@
     cursor: pointer;
   }
   
-  .book-appointment-btn div:nth-child(2) {
+  .book-appointment-btn-instant-consultation div:nth-child(2) {
     font-size: 12px;
     font-weight: bold;
   }
