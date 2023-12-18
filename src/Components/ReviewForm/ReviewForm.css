@@ -1,0 +1,22 @@
+.reviews {
+    margin-top: 10%;
+}
+
+.reviews h2 {
+    text-align: center;
+    font-size: 48px;
+    padding: 3%;
+}
+
+.reviews-table {
+    text-align: center;
+    width: 80%;
+    margin-left: 8%;
+    border-collapse: collapse;
+}
+
+.reviews-table th{
+    background-color: rgb(215, 227, 233);
+    border-bottom: 1px solid rgb(59, 59, 59);
+    padding: 8px;
+}
