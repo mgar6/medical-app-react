@@ -1,6 +1,5 @@
 import React, { useState, useEffect} from 'react';
 import './ReviewForm.css';
-import GiveReviews from './GiveReviews/GiveReviews';
 
 const ReviewForm = () => {
     const [doctors, setDoctors] = useState([]);
@@ -13,6 +12,7 @@ const ReviewForm = () => {
             //console.log("Doctor names: " + JSON.stringify(data));
             console.log("Doctor names: " + data.map(doctor => doctor.name));
         })
+        .catch(err => console.log(err));
     }
     useEffect(() => {
         getDoctorsNames();
