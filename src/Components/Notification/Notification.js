@@ -10,6 +10,7 @@ const Notification = ({ children }) => {
   useEffect(() => {
     const storedUsername = sessionStorage.getItem('email');
     const storedAppointmentData = JSON.parse(localStorage.getItem('appointmentData'));
+    console.log(isLoggedIn);
 
     if (storedUsername) {
       setIsLoggedIn(true);
@@ -26,7 +27,7 @@ const Notification = ({ children }) => {
     <div>
         <Navbar ></Navbar>
         {children}
-        {  isLoggedIn && appointmentData && ( 
+        { isLoggedIn && appointmentData && ( 
             <>
                 <div className="appointment-card">
                     <div className="appointment-card__content">

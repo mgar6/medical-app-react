@@ -9,7 +9,7 @@ import { v4 as uuidv4 } from 'uuid';
 const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
   const [showModal, setShowModal] = useState(false);
   const [appointments, setAppointments] = useState([]);
-  console.log("0 Appointments length: " + appointments.length);
+  //console.log("0 Appointments length: " + appointments.length);
 
   const handleBooking = () => {
     setShowModal(true);
@@ -28,9 +28,9 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
     };
     localStorage.setItem('appointmentData', JSON.stringify(appointmentData)); // envia el nombre del doctor, especialidad del doctor, nombre del paciente, telefono del paciente, fecha y hora de la cita
     const updatedAppointments = [...appointments, newAppointment]; // revisar si mejor se envia esto al local storage
-    console.log("1 Appointments length: " + appointments.length);
+    //console.log("1 Appointments length: " + appointments.length);
     setAppointments(updatedAppointments);
-    console.log("2 Appointments length: " + appointments.length);
+    //console.log("2 Appointments length: " + appointments.length);
     setShowModal(false);
   };
 

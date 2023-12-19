@@ -7,7 +7,6 @@ import GiveReviews from './GiveReviews/GiveReviews';
 const ReviewForm = () => {
     const [allDoctors, setAllDoctors] = useState([]);
     const [showModal, setShowModal] = useState(false);
-    //const [counter, setCounter] = useState(0);
     let count = 0;
     
     const getDoctorsNames = () => {
@@ -54,8 +53,9 @@ const ReviewForm = () => {
                                     onClose={() => setShowModal(false)}
                                 >
                                     {(close) => (
-                                        <div className="give-review-form">
+                                        <div className="review-popup">
                                             <GiveReviews/>
+                                            <button className="close-review-button" onClick={close}>Close</button>
                                         </div>   
                                     )}
                                 </Popup> 

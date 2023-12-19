@@ -1,11 +1,10 @@
 .review-form {
     margin-top: 8%;
-    margin-left: 12%;
-    margin-right: 12%;
+    margin-left: 20%;
+    margin-right: 20%;
     margin-bottom: 8%;
     display: block;
     background-color: #e2dddd88;
-    border: 1px solid gray;
     padding: 5%;
 }
 
@@ -20,9 +19,10 @@
 .review-submit-button {
     font-size: 16px;
     border: none;
-    border-radius: 20px;
+    border-radius: 5px;
     cursor: pointer;
     width: 100%;
     background-color: #2DBFDF;
     color: #fff;
+    padding: 4%;
 }

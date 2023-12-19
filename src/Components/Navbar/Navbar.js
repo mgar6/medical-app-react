@@ -15,7 +15,7 @@ const Navbar = () => {
         sessionStorage.removeItem("name");
         sessionStorage.removeItem("email");
         sessionStorage.removeItem("phone");
-        localStorage.removeItem("appointmentData")
+        localStorage.removeItem("appointmentData");
         setIsLoggedIn(false);
         //setUsername("");
        
