@@ -54,7 +54,9 @@ const ReviewForm = () => {
                                     onClose={() => setShowModal(false)}
                                 >
                                     {(close) => (
-                                        <GiveReviews/>
+                                        <div className="give-review-form">
+                                            <GiveReviews/>
+                                        </div>   
                                     )}
                                 </Popup> 
                             </td>

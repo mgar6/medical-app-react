@@ -1,0 +1,28 @@
+.review-form {
+    margin-top: 8%;
+    margin-left: 12%;
+    margin-right: 12%;
+    margin-bottom: 8%;
+    display: block;
+    background-color: #e2dddd88;
+    border: 1px solid gray;
+    padding: 5%;
+}
+
+.review-form h2 {
+    text-align: center;
+}
+
+.review-input {
+    padding: 2%;
+}
+
+.review-submit-button {
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 100%;
+    background-color: #2DBFDF;
+    color: #fff;
+}

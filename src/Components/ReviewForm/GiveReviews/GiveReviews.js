@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './GiveReviews.css';
 
 function GiveReviews() {
     const [showForm, setShowForm] = useState(false);
@@ -29,19 +30,22 @@ function GiveReviews() {
         }
     };
     return (
-        <div>
+        <div className="review-form">
             <form onSubmit={handleSubmit}>
                 <h2>Give Your Feedback</h2>
                 {showWarning && <p className="warning">Please fill out all fields.</p>}
-                <div>
+                <div className="review-input">
                     <label htmlFor="name">Name:</label>
                     <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} />
                 </div>
-                <div>
+                <div className="review-input">
                     <label htmlFor="review">Review:</label>
                     <textarea id="review" name="review" value={formData.review} onChange={handleChange} />
                 </div>
-                <button type="submit">Submit</button>
+                <div className="review-input">
+                    <label htmlFor="rating">Rating:</label>
+                </div>
+                <button type="submit" className="review-submit-button">Submit</button>
             </form>
             {submittedMessage && (
                 <div>

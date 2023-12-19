@@ -38,3 +38,7 @@
     border-radius: 5px;
     cursor: pointer;
 }
+
+.give-review-form {
+    height: 60vh; 
+}
