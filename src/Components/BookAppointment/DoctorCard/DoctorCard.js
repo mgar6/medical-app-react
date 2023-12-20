@@ -32,6 +32,7 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
     setAppointments(updatedAppointments);
     //console.log("2 Appointments length: " + appointments.length);
     setShowModal(false);
+    window.location.reload();
   };
 
   return (
