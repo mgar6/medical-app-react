@@ -7,6 +7,7 @@ import GiveReviews from './GiveReviews/GiveReviews';
 const ReviewForm = () => {
     const [allDoctors, setAllDoctors] = useState([]);
     const [showModal, setShowModal] = useState(false);
+    const [reviewMessage, setReviewMessage] = useState('');
     let count = 0;
     
     const getDoctorsNames = () => {
@@ -21,6 +22,10 @@ const ReviewForm = () => {
     useEffect(() => {
         getDoctorsNames();
     }, [])
+
+    const handleReviewMessage = (message) => {
+        setReviewMessage(message);        
+    };
 
     return (
         <div className="reviews">
@@ -54,13 +59,15 @@ const ReviewForm = () => {
                                 >
                                     {(close) => (
                                         <div className="review-popup">
-                                            <GiveReviews/>
+                                            <GiveReviews onSubmit={handleReviewMessage}/>
                                             <button className="close-review-button" onClick={close}>Close</button>
                                         </div>   
                                     )}
                                 </Popup> 
                             </td>
-                            <td></td>
+                            <td>
+                                <p>{reviewMessage}</p>
+                            </td>
                         </tr>
                     ))}
                 </tbody>

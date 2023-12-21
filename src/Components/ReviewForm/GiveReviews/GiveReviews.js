@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import './GiveReviews.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
-function GiveReviews() {
+
+function GiveReviews ({onSubmit}) {
     const [showForm, setShowForm] = useState(false);
     const [submittedMessage, setSubmittedMessage] = useState('');
     const [showWarning, setShowWarning] = useState(false);
@@ -19,9 +22,14 @@ function GiveReviews() {
         setFormData(e.target.value);
     };
 
+    //const handleRating = (e) => {
+    //    setFormData(e.target.value);
+    //    console.log("rating: " + formData.rating);
+   // }
     const handleSubmit = (e) => {
         e.preventDefault();
         setSubmittedMessage(formData);
+        onSubmit (submittedMessage);
         setFormData('');
         if (formData.name && formData.review && formData.rating > 0) {
             setShowWarning(false);
@@ -29,6 +37,15 @@ function GiveReviews() {
             setShowWarning(true);
         }
     };
+
+    function changeColor (e) {
+        e.target.style.color = "#eeff00";
+    };
+
+    function returnDefaultColor (e) {
+        e.target.style.color = "";
+    }
+
     return (
         <div className="review-form">
             <form onSubmit={handleSubmit}>
@@ -44,7 +61,12 @@ function GiveReviews() {
                 </div>
                 <div className="review-input">
                     <label htmlFor="rating">Rating:</label>
-                </div>
+                {/*}    <FontAwesomeIcon icon={faStar} id="rating" name="rating" value={formData.rating=1} onMouseEnter={changeColor} onMouseOut={returnDefaultColor} onChange={handleChange}/>
+                    <FontAwesomeIcon icon={faStar} id="rating" name="rating" value={formData.rating=2} onMouseEnter={changeColor} onMouseOut={returnDefaultColor} onChange={handleChange}/>
+                    <FontAwesomeIcon icon={faStar} id="rating" name="rating" value={formData.rating=3} onMouseEnter={changeColor} onMouseOut={returnDefaultColor} onChange={handleChange}/>
+                    <FontAwesomeIcon icon={faStar} id="rating" name="rating" value={formData.rating=4} onMouseEnter={changeColor} onMouseOut={returnDefaultColor} onChange={handleChange}/>
+                    <FontAwesomeIcon icon={faStar} id="rating" name="rating" value={formData.rating=5} onMouseEnter={changeColor} onMouseOut={returnDefaultColor} onChange={handleChange}/>
+    */} </div>
                 <button type="submit" className="review-submit-button">Submit</button>
             </form>
             {submittedMessage && (
