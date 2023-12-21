@@ -15,7 +15,7 @@ const ReviewForm = () => {
         .then(res => res.json())
         .then(data => {
             setAllDoctors(data);
-            console.log("Doctor names: " + data.map(doctor => doctor.name));
+            //console.log("Doctor names: " + data.map(doctor => doctor.name));
         })
         .catch(err => console.log(err));
     }
@@ -24,6 +24,7 @@ const ReviewForm = () => {
     }, [])
 
     const handleReviewMessage = (message) => {
+        console.log("Review message: " + message);
         setReviewMessage(message);        
     };
 

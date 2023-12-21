@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 
-function GiveReviews ({onSubmit}) {
+const GiveReviews = ({onSubmit}) => {
     const [showForm, setShowForm] = useState(false);
     const [submittedMessage, setSubmittedMessage] = useState('');
     const [showWarning, setShowWarning] = useState(false);
@@ -29,7 +29,7 @@ function GiveReviews ({onSubmit}) {
     const handleSubmit = (e) => {
         e.preventDefault();
         setSubmittedMessage(formData);
-        onSubmit (submittedMessage);
+        onSubmit(submittedMessage);
         setFormData('');
         if (formData.name && formData.review && formData.rating > 0) {
             setShowWarning(false);
