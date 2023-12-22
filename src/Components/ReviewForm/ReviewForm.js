@@ -1,15 +1,11 @@
 import React, { useState, useEffect} from 'react';
 import './ReviewForm.css';
-import Popup from 'reactjs-popup';
-import GiveReviews from './GiveReviews/GiveReviews';
+import ReviewFormRow from './ReviewFormRow/ReviewFormRow';
 
 
 const ReviewForm = () => {
     const [allDoctors, setAllDoctors] = useState([]);
-    const [showModal, setShowModal] = useState(false);
-    const [reviewMessage, setReviewMessage] = useState('');
-    let count = 0;
-    
+
     const getDoctorsNames = () => {
         fetch('https://api.npoint.io/9a5543d36f1460da2f63')
         .then(res => res.json())
@@ -22,11 +18,6 @@ const ReviewForm = () => {
     useEffect(() => {
         getDoctorsNames();
     }, [])
-
-    const handleReviewMessage = (message) => {
-        console.log("Review message: " + message);
-        setReviewMessage(message);        
-    };
 
     return (
         <div className="reviews">
@@ -42,35 +33,7 @@ const ReviewForm = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {allDoctors.map( doctor => (
-                        
-                        <tr className="table-row">
-                            <td>{count = count+1}</td> {/* setCounter(counter+1)*/}
-                            <td>{doctor.name}</td>
-                            <td>{doctor.speciality}</td>
-                            <td>
-                                <Popup
-                                    style={{ backgroundColor: '#FFFFFF' }}
-                                    trigger={
-                                        <button className={`review-button${reviewMessage !== '' ? '-disabled' : ''}`} disabled={reviewMessage && true}>Give Review</button>
-                                    }
-                                    modal
-                                    open={showModal}
-                                    onClose={() => setShowModal(false)}
-                                >
-                                    {(close) => (
-                                        <div className="review-popup">
-                                            <GiveReviews onSubmit={handleReviewMessage}/>
-                                            <button className="close-review-button" onClick={close}>Close</button>
-                                        </div>   
-                                    )}
-                                </Popup>
-                            </td>
-                            <td>
-                                <p>{reviewMessage}</p>
-                            </td>
-                        </tr>
-                    ))}
+                    {allDoctors.map( doctor => <ReviewFormRow {...doctor} key={doctor.name} />)} 
                 </tbody>
             </table>
         </div>
