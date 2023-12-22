@@ -52,7 +52,7 @@ const ReviewForm = () => {
                                 <Popup
                                     style={{ backgroundColor: '#FFFFFF' }}
                                     trigger={
-                                        <button className="review-button">Give Review</button>
+                                        <button className={`review-button${reviewMessage !== '' ? '-disabled' : ''}`} disabled={reviewMessage && true}>Give Review</button>
                                     }
                                     modal
                                     open={showModal}
@@ -64,7 +64,7 @@ const ReviewForm = () => {
                                             <button className="close-review-button" onClick={close}>Close</button>
                                         </div>   
                                     )}
-                                </Popup> 
+                                </Popup>
                             </td>
                             <td>
                                 <p>{reviewMessage}</p>

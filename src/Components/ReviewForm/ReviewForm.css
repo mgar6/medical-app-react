@@ -39,6 +39,16 @@
     cursor: pointer;
 }
 
+.review-button-disabled {
+    background-color: gray;
+    color: rgb(209, 206, 206);
+    border: none;
+    padding: 8px 16px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 .close-review-button {
     font-size: 16px;
     border: none;
