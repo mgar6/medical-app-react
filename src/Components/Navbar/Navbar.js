@@ -67,12 +67,12 @@ const Navbar = () => {
             {isLoggedIn?(
                 <>
                 <NavDropdown title={"Welcome, "+ username} id="basic-nav-dropdown">
-                    <Link to="/profile">
-                        <NavDropdown.Item>Your Profile</NavDropdown.Item>
-                    </Link>
-                    <Link to="/reports">
-                        <NavDropdown.Item>Your Reports</NavDropdown.Item>
-                    </Link>
+                    <NavDropdown.Item>
+                        <Link to="/profile">Your Profile</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                        <Link to="/reports">Your Reports</Link>
+                    </NavDropdown.Item>  
                 </NavDropdown>
                 
     
