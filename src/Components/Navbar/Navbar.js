@@ -2,14 +2,15 @@ import './Navbar.css';
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Navbar = () => {
     const [click, setClick] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [username, setUsername] = useState("");
     const [email, setEmail]=useState("");
-    const [showDropdown, setShowDropdown] = useState(false);
-    const handleClick = () => setClick(!click);
+    //const [showDropdown, setShowDropdown] = useState(false);
+    //const handleClick = () => setClick(!click);
     
     const handleLogout = () => {
         sessionStorage.removeItem("auth-token");
@@ -30,9 +31,9 @@ const Navbar = () => {
         setEmail('');
         window.location.reload();
     }
-    const handleDropdown = () => {
+   {/* const handleDropdown = () => {
       setShowDropdown(!showDropdown);
-    }
+    } */}
     useEffect(() => { 
       const storedemail = sessionStorage.getItem("email");
       if (storedemail) {
@@ -66,10 +67,10 @@ const Navbar = () => {
             {isLoggedIn?(
                 <>
                 <NavDropdown title={"Welcome, "+ username} id="basic-nav-dropdown">
-                    <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
-                    <NavDropdown.Item href="/reports">Reports</NavDropdown.Item>
+                    <NavDropdown.Item href="/profile">Your Profile</NavDropdown.Item>
+                    <NavDropdown.Item href="/reports">Your Reports</NavDropdown.Item>
                 </NavDropdown>
-                
+    
                     <li className="link">
                         <button className="btn2" onClick={handleLogout}>Logout</button>
                     </li>
