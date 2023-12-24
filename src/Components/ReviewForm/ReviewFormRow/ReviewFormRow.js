@@ -8,8 +8,9 @@ const ReviewFormRow = ({name, speciality}) => {
     let count = 0;
 
     const handleReviewMessage = (message) => {
-        console.log("Review message: " + message);
-        setReviewMessage(message);        
+        // console.log("Review message: " + message);
+        setReviewMessage(message);
+        localStorage.setItem('reviewFormData_message', JSON.stringify(message));        
     };
 
     return (
