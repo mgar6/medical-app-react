@@ -1,4 +1,3 @@
-/** Header - Navbar */
 
 @font-face {
   font-family: 'Atkinson Hyperlegible';
@@ -25,6 +24,7 @@ nav {
     /* background-color: #fff;*/
     font-family: Atkinson Hyperlegible;
   }
+
   .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -46,22 +46,21 @@ nav {
   .welcome-user:hover .dropdown-menu {
     display: block;
   }
-  
-  .dropdown-menu li {
+
+  .dropdown-menu.show {
+    display: block;
+  }
+
+  .dropdown-item {
     display: block;
     width: 150px;
     padding:5px;
-  }
-  
-  .dropdown-menu li a {
     color: #333;
     text-decoration: none;
     transition: color 0.3s ease;
-  }
-  
-  .dropdown-menu li a:hover {
-    color: #2190ff;
-  }
+  } 
+
+
   .nav__logo {
     font-size: 38px;
     font-weight: 400;

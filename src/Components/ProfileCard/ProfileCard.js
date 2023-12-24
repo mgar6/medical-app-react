@@ -10,7 +10,7 @@ const ProfileCard = () => {
         const storedEmail = sessionStorage.getItem("email");
         if (storedEmail) {
               setEmail(storedEmail);
-              setUsername(email.split("@")[0]); //corta el email en dos partes separadas por el @
+              setUserName(email.split("@")[0]); //corta el email en dos partes separadas por el @
           }
         
         const storedPhone = sessionStorage.getItem("phone");
@@ -28,9 +28,10 @@ const ProfileCard = () => {
             <p className="profile-card-info">
                 <span>Phone: </span> {phone}
             </p>
-            <Link to="/profile-form">
+            <Link to="/profile/edit">
                 <button className="edit-profile-button">Edit</button>
             </Link>
         </div>
-    )
-}
+    );
+};
+export default ProfileCard;

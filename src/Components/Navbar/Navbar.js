@@ -2,7 +2,7 @@ import './Navbar.css';
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import "bootstrap/dist/css/bootstrap.min.css";
+
 
 const Navbar = () => {
     const [click, setClick] = useState(false);
@@ -74,6 +74,7 @@ const Navbar = () => {
                         <NavDropdown.Item>Your Reports</NavDropdown.Item>
                     </Link>
                 </NavDropdown>
+                
     
                     <li className="link">
                         <button className="btn2" onClick={handleLogout}>Logout</button>
