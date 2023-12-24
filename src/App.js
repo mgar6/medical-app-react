@@ -11,6 +11,7 @@ import Notification from './Components/Notification/Notification';
 import ReviewForm from './Components/ReviewForm/ReviewForm';
 import ProfileCard from './Components/ProfileCard/ProfileCard';
 import ProfileForm from './Components/ProfileCard/ProfileForm/ProfileForm';
+import ReportsLayout from './Components/ReportsLayout/ReportsLayout';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
                 <Route path='/reviews' element={<ReviewForm/>}/>
                 <Route path='/profile' element={<ProfileCard/>}/>
                 <Route path='/profile/edit' element={<ProfileForm/>}/>
+                <Route path='/reports' element={<ReportsLayout/>}/>
               </Routes>
               </Notification>
         </BrowserRouter>

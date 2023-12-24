@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import './ProfileCard.css'
 
 const ProfileCard = () => {
     const [username, setUserName] = useState('');
@@ -7,10 +8,14 @@ const ProfileCard = () => {
     const [phone, setPhone] = useState('');
 
     useEffect(() => { 
+        const storedUserName = sessionStorage.getItem("name");
+        if (storedUserName) {
+            setUserName(storedUserName);
+        }
+
         const storedEmail = sessionStorage.getItem("email");
         if (storedEmail) {
               setEmail(storedEmail);
-              setUserName(email.split("@")[0]); //corta el email en dos partes separadas por el @
           }
         
         const storedPhone = sessionStorage.getItem("phone");
