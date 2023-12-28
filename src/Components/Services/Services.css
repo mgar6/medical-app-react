@@ -24,6 +24,7 @@
     border-radius: 5px;
     box-shadow: 0 3px 10px gray;
     background-color: white;
+    max-height: 90px;
 }
 
 .service-title {
