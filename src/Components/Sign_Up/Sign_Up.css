@@ -119,3 +119,7 @@
      margin-top: 10px;
 }
 
+.warning {
+    display: block;
+    color: red;
+}

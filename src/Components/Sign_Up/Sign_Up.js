@@ -9,7 +9,10 @@ const Sign_Up = () => {
     const [phone, setPhone] = useState('');
     const [password, setPassword] = useState('');
     const [showerr, setShowerr] = useState('');
+    const [showPhoneWarning, setShowPhoneWarning] = useState(false);
+    const [showPasswordWarning, setShowPasswordWarning] = useState(false);
     const navigate = useNavigate();
+
     const register = async (e) => { // a function named register has been created that handles the form submission and API call from the server side. This will establish the database connection.
         e.preventDefault();
         // API Call
@@ -26,6 +29,12 @@ const Sign_Up = () => {
             }),
         });
         const json = await response.json();
+        if (phone.length > 10) {
+            setShowPhoneWarning(true);
+        }
+        if (password.length > 8) {
+            setShowPasswordWarning(true);
+        }
         if (json.authtoken) {
             sessionStorage.setItem("auth-token", json.authtoken);
             sessionStorage.setItem("name", name);
@@ -69,6 +78,7 @@ const Sign_Up = () => {
                             </div>
                             <div className="form-group">
                                 <label htmlFor="phone">Phone</label>
+                                {showPhoneWarning && <p className="warning">Please enter 10 digits for the phone number</p>}
                                 <input value={phone} onChange={(e) => setPhone(e.target.value)} type="tel" name="phone" id="phone" required className="form-control" placeholder="Enter your phone number" aria-describedby="helpId" />
                             </div>
                             <div className="form-group">
@@ -78,6 +88,7 @@ const Sign_Up = () => {
                             </div>
                             <div className="form-group">
                                 <label for="password">Password</label>
+                                {showPasswordWarning && <p className="warning">The password must have at least 8 characters</p>}
                                 <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" name="password" id="password" required className="form-control" placeholder="Enter your password" aria-describedby="helpId" />
                                 <i className="fa fa-eye password-icon" aria-hidden="true"></i>
                             </div>
