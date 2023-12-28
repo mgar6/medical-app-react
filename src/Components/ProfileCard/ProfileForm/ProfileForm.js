@@ -47,7 +47,9 @@ const ProfileForm = () => {
         // Handle error case
         }
     };
-
+    const handleEdit = () => {
+        setEditMode(true);
+      };
 
     const handleInputChange = (e) => {
         setUpdatedDetails({
@@ -99,16 +101,29 @@ const ProfileForm = () => {
 
     return (
         <div className="profile-edit-container">
+            {editMode ? (
             <form onSubmit={handleSubmit}>
                 <label>Email</label>
                 <input type="email" name="email" value={userDetails.email} disabled/>
                 <label>Name</label>
-                <input type="text" name="name" placeholder="Enter your name" value={userDetails.name}  onChange={handleInputChange} /> {/* onChange={(e) => handleInputChange(e.target.value)}} */}
+                <input type="text" name="name" placeholder="Enter your name" value={updatedDetails.name}  onChange={handleInputChange} /> {/* onChange={(e) => handleInputChange(e.target.value)}} */}
                 <label>Phone number</label>
-                <input type="tel" name="phone" placeholder="Enter your phone number" value={userDetails.phone} onChange={handleInputChange} /> {/* onChange={(e) => handleInputChange(e.target.value)} */}
+                <input type="tel" name="phone" placeholder="Enter your phone number" value={updatedDetails.phone} onChange={handleInputChange} /> {/* onChange={(e) => handleInputChange(e.target.value)} */}
         
                 <button type="submit" className="edit-profile-button">Save</button>
             </form>
+            ) : (
+                <div className="profile-details">
+                    <h1>Welcome, {userDetails.name}</h1>
+                    <p className="profile-card-info">
+                        <span>Email: </span> {userDetails.email}
+                    </p>
+                    <p className="profile-card-info">
+                        <span>Phone: </span> {userDetails.phone}
+                    </p>
+                    <button onClick={handleEdit}>Edit</button>
+                </div>
+            )}    
         </div>
     );
 };
